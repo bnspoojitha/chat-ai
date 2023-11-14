@@ -35,6 +35,7 @@ export const options: NextAuthOptions = {
 
         if (res.ok && user) {
           return user;
+          console.log(user,"user");
         }
         return null;
       },
