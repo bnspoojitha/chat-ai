@@ -26,6 +26,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px 1fr 1fr 100px;
     background: linear-gradient(116deg, rgba(255, 255, 255, 0.25) -0.2%, rgba(255, 255, 255, 0.00) 122.69%);
+    min-height:"80vh";
+    
+
 }
-
-

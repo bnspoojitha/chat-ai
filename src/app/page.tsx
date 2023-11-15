@@ -78,7 +78,7 @@ export default function Home() {
 <div className="main-page">
 <Header />
 
-    {/* <main className="grid grid-cols-6 gap-3 w-screen p-5 glass" style={{minHeight:"80vh", gridAutoColumns: "1fr", marginTop: "10px"}} > 
+    <main className="grid grid-cols-6 gap-3 w-screen p-5 glass" style={{minHeight:"80vh", gridAutoColumns: "1fr", marginTop: "10px"}} > 
  <div className="glass-side col-span-1" style={{width: isOpen? "100%" : "35%"}}>
         <Sidebar sendValueToParent={handleToggle} isOpen={isOpen} />
       </div>
@@ -97,8 +97,8 @@ export default function Home() {
         </div>
        
       </div> 
-     </main>  */}
-     <LandingPage />
+     </main> 
+     {/* <LandingPage /> */}
     <Footer />
     </div>
   );
