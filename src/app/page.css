@@ -29,11 +29,12 @@
   }
 }
 .main-page{
-height: 100vh;
+/* height: 100vh; */
 }
 
 @media (min-width: 400px ) and (max-width: 767px) {
   .grid {
+    /* grid-template-columns: 1fr; */
     height: 80vh;
     display: flex;
     flex-direction: row;

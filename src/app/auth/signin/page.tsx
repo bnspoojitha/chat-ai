@@ -8,6 +8,8 @@ import axios from 'axios';
 import { FaGooglePlusG } from "react-icons/fa6";
 import {firebaseConfig} from "../../firebaseConfig";
 import { initializeApp } from "@firebase/app";
+import { useGlobalContext } from "../../context/globalContext";
+import { reducerTypes } from "../../reducers/globalReducer";
 
 initializeApp(firebaseConfig);
 
@@ -18,6 +20,7 @@ const signin = () => {
   const [error, setError] = useState("");
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const router = useRouter();
+  const { state: globalState, dispatch: globalDispatch } = useGlobalContext();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,6 +62,8 @@ const signin = () => {
     console.log("API Request Error:", error);
   });  
   };
+
+
   const auth = getAuth();
   const [authing, setAuthing] = useState(false);
   const signInWithGoogle = async () => {
@@ -66,6 +71,10 @@ const signin = () => {
   signInWithPopup(auth, new GoogleAuthProvider())
       .then( (response) => {
        authorizeUser(response.user.email);
+      //  globalDispatch({
+      //   type: reducerTypes.MAIL_ID,
+      //   payloadGlobal: response.user.email,
+      // });
       })
       .catch((error) => {
         console.log(error);

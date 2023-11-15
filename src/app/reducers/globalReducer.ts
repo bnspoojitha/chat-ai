@@ -6,6 +6,7 @@ export enum chatTypes {
 export enum reducerTypes {
   ADD_CHAT = "ADD_CHAT",
   SET_JWT = "SET_JWT",
+  MAIL_ID = "MAIL_ID"
 }
 
 export type Chat = {
@@ -16,16 +17,18 @@ export type Chat = {
 export type State = {
   chats: Chat[];
   jwt: string;
+  mailId: string;
 };
 
 export const init_state_global: State = {
   chats: [],
   jwt: "",
+  mailId: ""
 };
 
 export type ReducerActions = {
   type: reducerTypes;
-  payloadGlobal?: Chat | string;
+  payloadGlobal?: Chat | string ;
 };
 
 export const globalReducer = (
@@ -43,6 +46,11 @@ export const globalReducer = (
         ...state,
         jwt: action.payloadGlobal as string,
       };
+      case reducerTypes.MAIL_ID:
+        return {
+          ...state,
+          mailId: action.payloadGlobal as string,
+        };
     default:
       return state;
   }

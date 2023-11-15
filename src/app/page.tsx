@@ -17,6 +17,7 @@ import Cookies from "js-cookie";
 import "./page.css";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
+import LandingPage from "./components/Landingpage/landingPage";
 // import { IconName } from "react-icons/fa6";
 
 
@@ -77,8 +78,8 @@ export default function Home() {
 <div className="main-page">
 <Header />
 
-    <main className="grid grid-cols-6 gap-3 w-screen p-5 " style={{height:"80vh"}} >
-      <div className="glass-side col-span-1" style={{width: isOpen? "100%" : "35%"}}>
+    {/* <main className="grid grid-cols-6 gap-3 w-screen p-5 glass" style={{minHeight:"80vh", gridAutoColumns: "1fr", marginTop: "10px"}} > 
+ <div className="glass-side col-span-1" style={{width: isOpen? "100%" : "35%"}}>
         <Sidebar sendValueToParent={handleToggle} isOpen={isOpen} />
       </div>
       <div className="glass col-span-5 flex flex-col gap-2 p-5 overflow-y-auto" style={{marginLeft: isOpen? "0" : "-12%"}}>
@@ -94,8 +95,10 @@ export default function Home() {
         <div className="mt-auto pt-4 ">
           <Search />
         </div>
-      </div>
-    </main>
+       
+      </div> 
+     </main>  */}
+     <LandingPage />
     <Footer />
     </div>
   );
