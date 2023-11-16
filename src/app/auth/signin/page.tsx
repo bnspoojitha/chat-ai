@@ -44,12 +44,14 @@ const signin = () => {
   };
   async function authorizeUser(emailId: string | null) {
       const payload = {
-        email: "test2@gmail.com",
-        // email:emailId,
+        // username: "test2@gmail.com",
+        email:emailId,
       };
   axios.post('http://localhost:8080/chatbotapp/authorizeuser', payload)
+  // axios.post('https://33b8-2405-6e00-22ec-df7b-90c1-2bd5-407a-477c.ngrok-free.app/chatbotapp/authorizeuser', payload)
   .then((res) => {
-    if(res && res.data.whitelisted === true){
+    if(res){
+      console.log(res,"response of authorise user");
       router.push("/");
     }
     else{
@@ -71,10 +73,6 @@ const signin = () => {
   signInWithPopup(auth, new GoogleAuthProvider())
       .then( (response) => {
        authorizeUser(response.user.email);
-      //  globalDispatch({
-      //   type: reducerTypes.MAIL_ID,
-      //   payloadGlobal: response.user.email,
-      // });
       })
       .catch((error) => {
         console.log(error);
